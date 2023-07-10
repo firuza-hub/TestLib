@@ -1,13 +1,10 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'maven-publish'
 }
 
-
-
 android {
-    namespace 'com.fsa.mylibrary'
+    namespace 'com.fsa.hidden'
     compileSdk 33
 
     defaultConfig {
@@ -31,31 +28,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-
 }
 
 dependencies {
+    implementation project(path: ':mylibrary')
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
-    implementation project(path: ':hidden')
+    implementation 'com.google.android.gms:play-services-base:18.0.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-}
-
-
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-
-                groupId = 'com.github.firuza-hub'
-                artifactId = 'TestLib'
-                version = '1.0'
-            }
-        }
-    }
 }

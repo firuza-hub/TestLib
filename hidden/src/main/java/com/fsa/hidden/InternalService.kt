@@ -1,4 +1,4 @@
-package com.fsa.mylibrary.internal
+package com.fsa.hidden
 
 class InternalService {
     companion object{

@@ -1,12 +1,12 @@
 package com.fsa.testlib
 
-import com.fsa.mylibrary.Main.Companion.returnsSmth
+import com.fsa.mylibrary.internal.ApiImpl
 
 
 class Main {
 
     fun test(){
-        returnsSmth()
+        val api = ApiImpl()
 
     }
 
