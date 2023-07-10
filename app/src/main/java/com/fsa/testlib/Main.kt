@@ -7,6 +7,7 @@ class Main {
 
     fun test(){
         returnsSmth()
+
     }
 
 }
